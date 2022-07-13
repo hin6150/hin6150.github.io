@@ -1,12 +1,32 @@
+# Welcome to Jekyll!
+#
+# About Theme
+#
+# Yet another theme for elegant writers with modern flat style and beautiful
+# night/dark mode.
+#
+# Website: https://github.com/jeffreytse/jekyll-theme-yat
+#
+# You can do anything you want, including projects for your clients, as long
+# as you mention an attribution back (credit links in footer or project).
+# See the LICENCE file.
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you
+# use 'bundle exec jekyll serve'. If you change this file, please restart
+# the server process.
+#
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: hin6150's dev log
-email: hin6150@gmail.com
-author: hin6150
+title: Your awesome title
+email: your-email@domain.com
+author: GitHub User
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -22,15 +42,13 @@ author: hin6150
 #
 copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
-# Write an awesome description for your new site here. You can edit this
-# line in _config.yml. It will appear in your document head meta (for
-#Google search results) and in your feed.xml site description.
-
 description: >- # this means to ignore newlines until "baseurl:"
-dev log
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://hin6150.github.io" # the base hostname & protocol for your site, e.g. https://example.com
+url: "" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "" # the favicon for your site
 
 # Yat date format
@@ -116,15 +134,15 @@ yat:
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
 #
- night_mode: "auto"
+# night_mode: "auto"
 
 # Code badge setting
 # You can enable or disable the code badge and so on
- code_badge:
-   enabled: "true"
-   color: "#fff"
-   background_color: "#ff4e00"
-   text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
+# code_badge:
+#   enabled: "true"
+#   color: "#fff"
+#   background_color: "#ff4e00"
+#   text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
@@ -135,10 +153,12 @@ yat:
 #   - tags.html
 #   - about.md
 
-home:
-  heading: "Dev log"
-  subheading: "slow but steady"
-  banner: "/assets/images/banners/home.jpeg"
+# Page default value
+# defaults:
+#   home:
+#     heading: "Your awesome heading"
+#     subheading: "Your awesome subheading"
+#     banner: "Your image url"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
@@ -163,8 +183,8 @@ home:
 # paginate: 5
 
 # Disqus comments
- disqus:
-   shortname: "hin6150-github-io"
+# disqus:
+#   shortname: "Your Disqus username"
 
 # Gitment comments
 # gitment:
