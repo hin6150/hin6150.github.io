@@ -1,9 +1,9 @@
 ---
 title: Github Blog 만들기 -1
 author: Shinak
-date: 2021-01-03 18:32:00 -0500
-categories: [Blogging, Tutorial]
-tags: [github]
+date: 2021-07-14 18:32:00 +0900
+categories: [Blogging, Github]
+tags: [Github, Git, HowTo, GithubPage]
 ---
 
 ## 1-1 글을 시작하며,
@@ -43,7 +43,7 @@ Setting > Pages로 이동 후 **Your site is ready to be published at <https://h
 만약 404 에러 화면 대신 **{owner}.github.io 문구가 출력**이 된다면 정상적으로 웹상에 퍼블리싱 된 것입니다.  
 *Note: Readme.md 파일을 생성하지 않은 경우 다르게 표시 될 수 있습니다.*
 
-### 1-3 ex) GitHub vs Git?
+#### 1-3 ex) GitHub vs Git?
 다음 단계는 생성된 저장소에 우리가 만들고자 하는 블로그에 해당하는 파일을 보내주는 것 입니다.  
 다만, 해당 단계에 들어가기 전에 앞서 **Github와 Git이 무엇인지**, 그리고 Local 저장소와 Remote 저장소의 차이가 무엇인지 간단하게 확인하고 넘어가도록 하겠습니다.
 
@@ -103,7 +103,7 @@ VsCode 또한 정상적으로 설치되었다면 첫번째 메뉴에 **Open in V
 
 먼저, VsCode를 열어 Local Repository 폴더 안에 index.html 파일을 생성합니다.
 
-```html
+```shell
 <!doctype html>
 <html>
     <head>
@@ -116,6 +116,7 @@ VsCode 또한 정상적으로 설치되었다면 첫번째 메뉴에 **Open in V
     </body>
 </html>
 ```
+{: file="index.html" }
 
 저는 위와 같은 간단한 예제 코드들을 이용하여 html을 구성하였습니다.
 

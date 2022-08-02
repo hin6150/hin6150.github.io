@@ -1,18 +1,9 @@
 ---
-layout: post
 title: Github Blog 만들기 -2
-subtitle: Github Pages를 이용하여 개발 블로그를 만들어 보자.
 author: Shinak
-categories: develope
+date: 2021-07-27 20:35:00 +0900
+categories: [Blogging, Jekyll]
 tags: [Github, HowTo, Jekyll, Ruby]
-banner:
-  image: /assets/img/howTo_github/home.jpg
-  opacity: 0.618
-  background: "#000"
-  height: "100vh"
-  min_height: "80vh"
-  heading_style: "font-size: 4.25em; font-weight: bold"
-  subheading_style: "color: gold"
 ---
 ## 2-1 블로그 꾸미기
 저번 포스팅에서 Github 블로그를 성공적으로 개설 후 개인 작업환경에서 글을 쓰고 Github DeskTop을 이용하여 자신의 Github 블로그에 포스팅 하였습니다.  
@@ -46,7 +37,7 @@ banner:
 
 ## 2-3 Jekyll 설치하기
 이후 아래와 같은 명령어를 Prompt에 순차적으로 입력하여 jekyll을 설치해 줍니다.
- ```
+ ```terminal
  gem install jekyll bundler
  gem install webrick
  ```
@@ -59,8 +50,8 @@ banner:
 
 또는, Github Desktop에서 Current repository를 클릭 후 밑에 보이는 repository에 커서를 가져다 대고 있거나 우클릭 하여 Show in Explorer으로 확인 할 수 있습니다.
 
-이렇게 로컬 repository 주소를 확인 하였다면 다시 Prompt로 돌아와 "cd {repository 주소}" 명령어를 입력해 줍니다. 저는 저의 repository 주소가 C:\Users\Hin6150\Documents\GitHub\hino61500.github.io 이므로 아래와 같이 입력하였습니다.
-```
+이렇게 로컬 repository 주소를 확인 하였다면 다시 Prompt로 돌아와 "cd {repository 주소}" 명령어를 입력해 줍니다. 저는 저의 repository 주소가 `C:\Users\Hin6150\Documents\GitHub\hino61500.github.io`{: .filepath} 이므로 아래와 같이 입력하였습니다.
+```terminal
 cd C:\Users\Hin6150\Documents\GitHub\hino61500.github.io
 ```
 
@@ -69,23 +60,23 @@ cd C:\Users\Hin6150\Documents\GitHub\hino61500.github.io
 *Note: chcp 65001는 utf-8로 인코딩 시키는 명령어 입니다.*
 
 이렇게 repository로 이동하였다면 이제 해당 위치에 Jekyll 폴더를 생성해야 합니다. 설치 명령어는 아래와 같습니다.
-```
+```terminal
 jekyll new ./
 ```
 만약 <span style="color:red">Conflict: C:/Users/Hin6150/Documents/GitHub/hino61500.github.io exists and is not empty.</span>와 같은 에러가 출력된다면 해당 폴더에 .git을 제외한 파일들을 삭제하거나 jekyll new ./ --trace를 입력하여 해결합니다.
 
 이후 아래와 같은 명령어를 순차적으로 실행한다면 Jekyll 설치는 끝났습니다.
-```
+```terminal
 bundle install
 bundle add webrick
 ```
 
 마지막으로 아래와 같은 명령어를 실행하여 서버가 정상적으로 실행되는지 확인해야 합니다.
-```
+```terminal
 bundle exec jekyll server
 ```
 아래와 같은 메세지가 출력되었다면 localhost:4000을 url에 입력하여 서버가 설치되었는지 확인해봅시다.
-```
+```terminal
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 ```
@@ -123,7 +114,7 @@ Github 링크 같은 경우에는 해당 링크로 이동 한 뒤에 초록색 C
 이후 해당 Zip파일을 압축해제하여 자신의 Local Repository로 붙여넣기를 수행하면 같은 파일이 있다는 경고문이 뜨는데, 이때 같은 파일은 덮어쓰기로 처리합니다.
 
 마지막으로 prompt에서 아래 명령어를 입력 후 정상적으로 Jekyll 서버가 작동 하는지 확인합니다.
-```
+```terminal
 bundle install
 ```
 
