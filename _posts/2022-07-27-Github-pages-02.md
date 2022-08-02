@@ -5,14 +5,16 @@ date: 2021-07-27 20:35:00 +0900
 categories: [Blogging, Jekyll]
 tags: [Github, HowTo, Jekyll, Ruby]
 ---
-## 2-1 블로그 꾸미기
+
+## 글을 시작하며
+<hr>
 저번 포스팅에서 Github 블로그를 성공적으로 개설 후 개인 작업환경에서 글을 쓰고 Github DeskTop을 이용하여 자신의 Github 블로그에 포스팅 하였습니다.  
 하지만 아직 블로그라기에는 어딘가 조금 많이 부족해 보입니다. 이번 포스팅에서는 블로그에 여러 기능들을 추가하고 꾸미는 작업을 하겠습니다.  
 블로그를 꾸미기 위해 저희는 Jekyll이라는 정적 웹 페이지 생성기를 사용할 계획입니다.  
 
 *Note: Jekyll은 Html/Markdown으로 작성한 글을 레이아웃에 맞춰 웹 페이지로 생성해주는 프레임워크입니다.*
 
-### 2-1 ex) 정적 웹 페이지 vs 동적 웹 페이지
+### ex) 정적 웹 페이지 vs 동적 웹 페이지
 그렇다면 정적 웹 페이지는 무엇일까요?  
 웹은 크게 두가지로 나뉩니다. 정적(Static) 웹과 동적(Dynamic) 웹 입니다.
 
@@ -26,16 +28,18 @@ tags: [Github, HowTo, Jekyll, Ruby]
 정리하자면, 정적 웹 페이지는 개발자가 미리 만들어둔 코드들로 이미 구성 되어있는 페이지이고 동적 웹 페이지는 호출될 때 마다 데이터 베이스로부터 데이터들을 가져와 서버가 페이지를 재구성하는 형태입니다.  
 따라서 매번 새로운 내용들을 표시해야 되는 주식, 날씨, SNS와 같은 내용의 페이지는 동적 웹 페이지를 이용하는 것이 유리하고 매번 같은 내용을 표시하는 학교나 회사의 소개글, 블로그 같은 경우에는 쉽고 빠른 정적 웹 페이지를 이용하는 것이 효과적일 수 있겠죠.
 
-## 2-2 Ruby 설치하기
+## Ruby & Jekyll
+<hr>
+### 1. Ruby 설치하기
 이제 왜 정적 웹 페이지 생성기인 Jekyll을 사용해야 하는지 이해했다면 Jekyll을 설치해보겠습니다. Jekyll은 프로그래밍 언어인 Ruby를 통해 제작되었으므로 먼저 Ruby를 설치해야 합니다.
 
 저는 [Ruby 공식 사이트][1]에서 현재 최신 버전인 `Ruby+Devkit 3.1.2-1 (x64)`을 받아 사용하였습니다.
 
-![ruby](/assets/img/howTo_github/002/ruby.png)
+![ruby](/assets/img/howTo_github/002/ruby.png){: .shadow}
 
 정상적으로 설치를 완료하였다면, 왼쪽 아래 윈도우 검색창에서 ruby를 검색하여 Start Command Prompt with Ruby라는 앱을 실행 할 수 있습니다.
 
-## 2-3 Jekyll 설치하기
+### 2. Jekyll 설치하기
 이후 아래와 같은 명령어를 Prompt에 순차적으로 입력하여 jekyll을 설치해 줍니다.
  ```terminal
  gem install jekyll bundler
@@ -46,7 +50,7 @@ tags: [Github, HowTo, Jekyll, Ruby]
 
 이후 자신의 로컬 repository로 이동해야 합니다. 해당 repository 주소는 VSCode에서 저번에 생성한 index.html을 우클릭 하여 파일 탐색기에서 표시를 클릭하여 확인할 수 있습니다.
 
-![local](/assets/img/howTo_github/002/local.PNG)
+![local](/assets/img/howTo_github/002/local.PNG){: .shadow}
 
 또는, Github Desktop에서 Current repository를 클릭 후 밑에 보이는 repository에 커서를 가져다 대고 있거나 우클릭 하여 Show in Explorer으로 확인 할 수 있습니다.
 
@@ -81,16 +85,16 @@ bundle exec jekyll server
   Server running... press ctrl-c to stop.
 ```
 
-![jekyll](/assets/img/howTo_github/002/jekyll.PNG)
+![jekyll](/assets/img/howTo_github/002/jekyll.PNG){: .shadow}
 
 이렇게 정상적으로 표시되었다면 성공입니다! Jekyll이 자신의 Local 환경에 정상적으로 설치된 것 입니다.  
 이제 Github Desktop으로 가서 Commit to main을 클릭하여 자신의 Github 블로그에서도 해당 화면이 보이는지 확인해봅시다.
 
-![commit](/assets/img/howTo_github/002/commit.PNG)
+![commit](/assets/img/howTo_github/002/commit.PNG){: .shadow}
 
 *Note: 여러개의 수정사항을 commit 할 시 수정내용을 입력해야 commit이 가능해집니다.*
 
-## 2-4 Jekyll 테마 적용하기
+### 3. Jekyll 테마 적용하기
 Jekyll에는 여러가지 테마들이 존재합니다.
 
 * <http://jekyllthemes.org/>
@@ -106,7 +110,7 @@ Jekyll에는 여러가지 테마들이 존재합니다.
 
 자신이 원하는 테마를 찾았다면 Download 또는 Github 링크가 존재할 것입니다.  
 
-![theme](/assets/img/howTo_github/002/theme.PNG)
+![theme](/assets/img/howTo_github/002/theme.PNG){: .shadow}
 
 Github 링크 같은 경우에는 해당 링크로 이동 한 뒤에 초록색 Code 버튼을 눌러 Download Zip을 선택하여 다운로드 하시면 됩니다.
 해당 화면이 보이지 않는 경우 Repositories로 이동 후 찾으셨던 theme을 선택하셔서 다운로드 하시면 됩니다.
@@ -122,10 +126,11 @@ bundle install
 
 서버가 정상적으로 작동하는 것 또한 확인했다면 자신의 Github 블로그에 Commit을 통해 블로그에서도 정상적으로 작동이 되었는지 확인합니다.
 
-## 2-5 마무리
-만약 2-3 과정에서 정상적으로 서버가 구동되었지만, 2-4 과정에서 이상한 화면이 나왔다면 Theme 문제일 가능성이 높습니다. 다른 Theme을 구하시거나 문제가 되는 부분을 해결하시면 정상적으로 작동 될 것입니다.  
+## 마무리
+<hr>
+만약 2-3 과정에서 정상적으로 서버가 구동되었지만, 테마를 적용하는 과정에서 오류 화면이 나왔다면 Theme 문제일 가능성이 높습니다. 다른 Theme을 구하시거나 문제가 되는 부분을 해결하시면 정상적으로 작동 될 것입니다.  
 
-*Note: Jekyll 서버를 실행하게 되면 존재하는 오류 관련된 메세지들이 출력됩니다.*
+*Note: Jekyll 서버를 실행하게 되면 존재하는 오류 관련된 메세지들이 출력됩니다.*  
 *Note: Jekyll 서버는 구동하는데 Github Page에 출력이 되지 않는다면 Github Repository에서 Actions 항목에서 이유를 확인 할 수 있습니다.*
 
 [1]:https://rubyinstaller.org/downloads/
