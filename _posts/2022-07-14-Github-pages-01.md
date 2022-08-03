@@ -33,6 +33,7 @@ Github Page에서는 프로젝트, 사용자, 단체의 3가지 종류의 사이
 그리고 Public으로 설정 후 Readme.md 파일을 추가 선택을 하고 아래의 Create Repository 버튼을 클릭하여 저장소를 생성 해 줍니다.
 
 ### 2. Github Page 생성
+<hr>
 이제 이렇게 생성된 Repository가 웹상에서 확인 할 수 있는 퍼블리싱(Publishing) 작업이 잘 수행되었는지 확인해야 합니다.
 
 
@@ -49,6 +50,7 @@ Setting > Pages로 이동 후 **Your site is ready to be published at <https://h
 *Note: Readme.md 파일을 생성하지 않은 경우 다르게 표시 될 수 있습니다.*
 
 ### ex) GitHub vs Git?
+<hr>
 다음 단계는 생성된 저장소에 우리가 만들고자 하는 블로그에 해당하는 파일을 보내주는 것 입니다.  
 다만, 해당 단계에 들어가기 전에 앞서 **Github와 Git이 무엇인지** 간단하게 확인하고 넘어가도록 하겠습니다.
 
@@ -67,6 +69,7 @@ Setting > Pages로 이동 후 **Your site is ready to be published at <https://h
 우리는 Github를 이용하여 Git을 이용하는 프로젝트들을 여러 다른 사람들과 작업 할 수 있는 것이죠.
 
 ### ex) Local >> Remote
+<hr>
 자, 여기까지 이해를 하였다면 다음 단계로 수행하는 작업이 무엇인지 감이 올 것입니다.  
 우리는 Github에 Repository를 만들어 Github Page를 생성하였습니다. 즉 호스팅 플랫폼인 **Github내에 원격(Remote) 저장소가 존재**하는 셈이죠.  
 이러한 원격 저장소에서 작업을 하는 것은 즉각적인 피드백이 어려우므로 **개개인의 작업 환경인 Local 저장소에서 작업 후 Remote 저장소로** 보내주는 작업이 훨씬 효율적입니다.  

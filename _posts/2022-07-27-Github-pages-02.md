@@ -15,6 +15,7 @@ tags: [Github, HowTo, Jekyll, Ruby]
 *Note: Jekyll은 Html/Markdown으로 작성한 글을 레이아웃에 맞춰 웹 페이지로 생성해주는 프레임워크입니다.*
 
 ### ex) 정적 웹 페이지 vs 동적 웹 페이지
+<hr>
 그렇다면 정적 웹 페이지는 무엇일까요?  
 웹은 크게 두가지로 나뉩니다. 정적(Static) 웹과 동적(Dynamic) 웹 입니다.
 
@@ -40,6 +41,7 @@ tags: [Github, HowTo, Jekyll, Ruby]
 정상적으로 설치를 완료하였다면, 왼쪽 아래 윈도우 검색창에서 ruby를 검색하여 Start Command Prompt with Ruby라는 앱을 실행 할 수 있습니다.
 
 ### 2. Jekyll 설치하기
+<hr>
 이후 아래와 같은 명령어를 Prompt에 순차적으로 입력하여 jekyll을 설치해 줍니다.
  ```terminal
  gem install jekyll bundler
@@ -95,6 +97,7 @@ bundle exec jekyll server
 *Note: 여러개의 수정사항을 commit 할 시 수정내용을 입력해야 commit이 가능해집니다.*
 
 ### 3. Jekyll 테마 적용하기
+<hr>
 Jekyll에는 여러가지 테마들이 존재합니다.
 
 * <http://jekyllthemes.org/>
