@@ -11,6 +11,7 @@ baseurl: ''
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
 lang: en
+#ko-KR
 
 # Additional parameters for datetime localization, optional. › https://github.com/iamkun/dayjs/tree/dev/src/locale
 prefer_datetime_locale:
@@ -26,7 +27,7 @@ title: Shinak's Dev Blog                          # the main title
 tagline: Daily history   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  공부한 내용들을 간략하게 정리하여 업로드 하고 있습니다.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://hin6150.github.io'
@@ -56,7 +57,7 @@ google_site_verification: 'google970281ebc3f71d3d.html'              # fill in t
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: 'UA-234315993-1'                # fill in your Google Analytics ID
+  id: 'G-6WHM0Y0RHX'                # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
