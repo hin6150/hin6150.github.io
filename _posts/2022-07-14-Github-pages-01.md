@@ -19,16 +19,20 @@ Github Page를 이용하여 블로그를 만들면서 나름대로 찾아본 내
 먼저 블로그를 만들기 위해서는 [Github][0] 계정과 해당 블로그를 작업할 저장소(Repository)가 필요합니다.  
 자신의 Github에서 Repositories 항목을 찾을 수 있는데, 이것은 Git으로 관리하는 프로젝트 저장소를 뜻하며 말 그대로 파일이나 폴더 등을 저장해 두는 장소 입니다.
 
-![Repository](/assets/img/howTo_github/001/repository.PNG){: .shadow}  
+![Repository](/assets/img/howTo_github/001/repository.PNG){: .shadow}
+_New Repository_
 
 위 사진과 같이, **Github메인 화면에서 + 아이콘을 클릭해** 새로운 저장소를 생성 할 수 있습니다.  
-Github Page에서는 프로젝트, 사용자, 단체의 3가지 종류의 사이트를 제공 하고 있습니다. 
+Github Page에서는 프로젝트, 사용자, 단체의 3가지 종류의 사이트를 제공 하고 있습니다.  
 하지만 저희가 작업하는 환경은 개인용 블로그이므로, 사용자 Page를 생성하여 사용할 계획입니다.
 
-*Note: Github Pages에 대한 더 자세한 설명은 해당 [링크][1]에서 확인 할 수 있습니다.*
+> *Github Pages에 대한 더 자세한 설명은 해당 [링크][1]에서 확인 할 수 있습니다.*
+{: .prompt-info }  
 
 
-![page](/assets/img/howTo_github/001/repository2.PNG){: .shadow}  
+
+![page](/assets/img/howTo_github/001/repository2.PNG){: .shadow}
+_Create Repository_
 
 사용자 page를 만들기 위해서는 **Repository name을 `{owner}.github.io`와 같은 형식**으로 설정하면 됩니다.  
 예제에서는 owner이 hin61500이므로, hin61500.github.io을 입력하게 됩니다.  
@@ -40,16 +44,19 @@ Github Page에서는 프로젝트, 사용자, 단체의 3가지 종류의 사이
 
 
 ![Publishing](/assets/img/howTo_github/001/publishing.PNG){: .shadow}
+_Page Publishing_
 
 Setting > Pages로 이동 후 **Your site is ready to be published at <https://hino61500.github.io/>**와 같은 문구가 출력되는지 확인 후 해당 링크로 이동하여 정상적으로 화면이 표시되는지 확인합니다.
 
-*Note: Repository 생성 후 Page가 생성되기까지 10분정도 소요될 수 있습니다.*
-
+> *Repository 생성 후 Page가 생성되기까지 10분정도 소요될 수 있습니다.*
+{: .prompt-tip }
 
 ![Publishing](/assets/img/howTo_github/001/publishing2.PNG){: .shadow}
+_성공 화면_
 만약 404 에러 화면 대신 **{owner}.github.io 문구가 출력**이 된다면 정상적으로 웹상에 퍼블리싱 된 것입니다.
   
-*Note: Readme.md 파일을 생성하지 않은 경우 다르게 표시 될 수 있습니다.*
+> *Readme.md 파일을 생성하지 않은 경우 다르게 표시 될 수 있습니다.*
+{: .prompt-tip }
 
 ### ex) GitHub vs Git?
 <hr>
@@ -83,18 +90,20 @@ Setting > Pages로 이동 후 **Your site is ready to be published at <https://h
 Commit & Push를 위한 툴로 저희는 [Github Desktop][2]와 [VsCode][3]를 설치하여 사용 할 예정입니다.  
 Github Desktop은 Git을 잘 모르더라도 **Commit와 Push를 손쉽게 수행 할 수 있도록 도와주는 프로그램**이고, VsCode는 사용자로 하여금 **개인 작업환경에서 원활하게 작업**을 할 수 있도록 도와주는 역할을 합니다.
 
-*Note: 자신이 편한 작업 환경이 있다면, 해당 환경에서 진행해도 괜찮습니다.*
-
+> *자신이 편한 작업 환경이 있다면, 해당 환경에서 진행해도 괜찮습니다.*
+{: .prompt-tip }
 
 ![GithubDesktop](/assets/img/howTo_github/001/githubDesktop.PNG){: .shadow}
+_Github Desktop_
 
 먼저, Github Desktop을 정상적으로 설치 후 자신의 Github 계정과 연동하였다면 위와와 같은 화면이 보일 것 입니다.  
 해당 화면은 자신의 Github계정의 Repositories를 보여주는데, 이 중 **작업할 Repository를 선택하여 Clone** 합니다.
 
-*Note: Clone 버튼은 **Your repositories** 밑에 있는 저장소를 클릭 시 생깁니다.*
-
+> *Clone 버튼은 **Your repositories** 밑에 있는 저장소를 클릭 시 생깁니다.*
+{: .prompt-tip }
 
 ![Clone](/assets/img/howTo_github/001/githubDesktop2.PNG){: .shadow}
+_Clone a Repository_
 
 클릭 시 위와 같은 화면이 표시되는데, 해당 작업은 Github에 올라와 있는 Repository를 자신의 개인 환경에 복사한 뒤 Github Desktop으로 하여금 추척 하도록 설정하는 작업입니다. 즉, Remote 저장소의 내용을 가져와 **Local Repository를 생성하는 작업**입니다.
 
@@ -113,6 +122,7 @@ VsCode 또한 정상적으로 설치되었다면 첫번째 메뉴에 **Open in V
 
 
 ![index.html](/assets/img/howTo_github/001/index_html.PNG){: .shadow}
+_Create index.html_
 
 먼저, VsCode를 열어 Local Repository 폴더 안에 index.html 파일을 생성합니다.
 
@@ -135,14 +145,18 @@ VsCode 또한 정상적으로 설치되었다면 첫번째 메뉴에 **Open in V
 
 
 ![commit](/assets/img/howTo_github/001/commit.PNG){: .shadow}
+_Commit_
 
 Github Desktop에서 Local Repository의 변경사항인 index.html이라는 파일이 새로 생겼다는 것을 확인 할 수 있습니다.  
-*Note: 만약, Github Desktop에서 This file is empty가 떠있다면, index.html 파일을 저장해주세요.* 
+
+> *만약, Github Desktop에서 This file is empty가 떠있다면, index.html 파일을 저장해주세요.* 
+{: .prompt-tip }
 
 이후, Commit to main 버튼을 이용하여 Local Repository의 변경사항을 저장 할 수 있습니다. 
 
 
 ![push](/assets/img/howTo_github/001/push.PNG){: .shadow}
+_Push_
 
 그리고 Push to Origin 버튼을 통해서 해당 변경사항을 Remote Repository인 Github로 전송 할 수 있습니다.  
 이제 자신의 Github page 주소로 이동하면 변경된 블로그를 확인 할 수 있습니다!
