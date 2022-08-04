@@ -13,7 +13,9 @@ Github Page를 이용하여 블로그를 만들면서 나름대로 찾아본 내
 
 ## Github_Remote Repository  
 <hr>
+
 ### 1. Repository 만들기
+<hr>
 먼저 블로그를 만들기 위해서는 [Github][0] 계정과 해당 블로그를 작업할 저장소(Repository)가 필요합니다.  
 자신의 Github에서 Repositories 항목을 찾을 수 있는데, 이것은 Git으로 관리하는 프로젝트 저장소를 뜻하며 말 그대로 파일이나 폴더 등을 저장해 두는 장소 입니다.
 

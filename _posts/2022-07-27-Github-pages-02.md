@@ -77,6 +77,8 @@ bundle install
 bundle add webrick
 ```
 
+### 3. 실행 확인
+<hr>
 마지막으로 아래와 같은 명령어를 실행하여 서버가 정상적으로 실행되는지 확인해야 합니다.
 ```terminal
 bundle exec jekyll server

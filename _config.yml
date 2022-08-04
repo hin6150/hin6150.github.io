@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Shinak                          # the main title
+title: Shinak's Dev Blog                          # the main title
 
 tagline: Daily history   # it will display as the sub-title
 
@@ -84,7 +84,7 @@ img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
 # eg '/commons/avatar.jpg'
-avatar: ''
+avatar: '/assets/img/home/avatar.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
