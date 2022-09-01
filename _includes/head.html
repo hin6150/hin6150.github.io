@@ -1,7 +1,4 @@
-<!--
-  The Head
--->
-
+<!--  The Head -->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,11 +30,11 @@
     {% for prop in properties %}
       {% if site.img_cdn contains '//' %}
         <!-- `site.img_cdn` is a cross-origin URL -->
-        {% capture target %}<meta property="{{ prop }}" content="{{ site.url }}{% endcapture %}
-        {% capture replacement %}<meta property="{{ prop }}" content="{{ site.img_cdn }}{% endcapture %}
+        {% capture target %}<meta property="{{ prop }}" content="{{ site.url }}">{% endcapture %}
+        {% capture replacement %}<meta property="{{ prop }}" content="{{ site.img_cdn }}">{% endcapture %}
       {% else %}
         <!-- `site.img_cdn` is a local file path -->
-        {% capture target %}<meta property="{{ prop }}" content="{{ site.url }}{{ site.baseurl }}{% endcapture %}
+        {% capture target %}<meta property="{{ prop }}" content="{{ site.url }}{{ site.baseurl }}">{% endcapture %}
         {% assign replacement = target | append: site.img_cdn %}
       {% endif %}
 
@@ -113,4 +110,9 @@
   {% unless site.theme_mode %}
     {% include mode-toggle.html %}
   {% endunless %}
+
+  <!-- AdSense -->
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5902646867257909"
+     crossorigin="anonymous"></script>
 </head>
