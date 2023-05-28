@@ -1,0 +1,469 @@
+<!DOCTYPE html><html lang="en" ><head> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5902646867257909" crossorigin="anonymous" ></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="HTML/CSS 고급 모듈" /><meta name="author" content="Shinak" /><meta property="og:locale" content="en" /><meta name="description" content="이전 HTML/CSS에서는 HTML과 CSS에 대한 기본적인 이해와 응용에 관한 내용이었다면, 이제는 어떻게 하면 좀 더 쉽게 레이아웃을 작성 할 수 있는지에 대해서 적어볼까 합니다." /><meta property="og:description" content="이전 HTML/CSS에서는 HTML과 CSS에 대한 기본적인 이해와 응용에 관한 내용이었다면, 이제는 어떻게 하면 좀 더 쉽게 레이아웃을 작성 할 수 있는지에 대해서 적어볼까 합니다." /><link rel="canonical" href="https://hin6150.github.io/posts/HTML-CSS-04/" /><meta property="og:url" content="https://hin6150.github.io/posts/HTML-CSS-04/" /><meta property="og:site_name" content="Shinak’s Dev Blog" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2023-04-28T12:34:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="HTML/CSS 고급 모듈" /><meta name="google-site-verification" content="google970281ebc3f71d3d.html" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shinak"},"dateModified":"2023-05-01T11:19:12+09:00","datePublished":"2023-04-28T12:34:00+09:00","description":"이전 HTML/CSS에서는 HTML과 CSS에 대한 기본적인 이해와 응용에 관한 내용이었다면, 이제는 어떻게 하면 좀 더 쉽게 레이아웃을 작성 할 수 있는지에 대해서 적어볼까 합니다.","headline":"HTML/CSS 고급 모듈","mainEntityOfPage":{"@type":"WebPage","@id":"https://hin6150.github.io/posts/HTML-CSS-04/"},"url":"https://hin6150.github.io/posts/HTML-CSS-04/"}</script><title>HTML/CSS 고급 모듈 | Shinak's Dev Blog</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Shinak's Dev Blog"><meta name="application-name" content="Shinak's Dev Blog"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://cdn.jsdelivr.net" /><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap" /><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials" /><link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" /><link rel="dns-prefetch" href="https://www.googletagmanager.com" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" /><link rel="stylesheet" href="/assets/css/style.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css" /> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/img/home/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Shinak's Dev Blog</a></div><div class="site-subtitle font-italic">Daily history</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/hin6150" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['hin6150','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>HTML/CSS 고급 모듈</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>HTML/CSS 고급 모듈</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1682652840" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Apr 28, 2023 </em> </span> <span> Updated <em class="" data-ts="1682907552" data-df="ll" data-toggle="tooltip" data-placement="bottom"> May 1, 2023 </em> </span><div class="d-flex justify-content-between"> <span> By <em> Shinak </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="3563 words"> <em>19 min</em> read</span></div></div></div><div class="post-content"><p>이전 HTML/CSS에서는 HTML과 CSS에 대한 기본적인 이해와 응용에 관한 내용이었다면, 이제는 어떻게 하면 좀 더 쉽게 레이아웃을 작성 할 수 있는지에 대해서 적어볼까 합니다.</p><h2 id="bootstrap"><span class="mr-2">Bootstrap</span><a href="#bootstrap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>FrontEnd에서는 Bootstrap이라는 툴킷을 이용하여 좀 더 쉽고 빠르게 프로젝트를 완성 시킬 수 있습니다.</p><p>먼저, Bootstrap을 시작하려면 bootstrap css와 js를 html에 적용해야 합니다.</p><p>저희는 앞서 배운 cdn을 이용해 적용시켜보도록 하겠습니다.</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span>
+    <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"</span>
+    <span class="na">rel=</span><span class="s">"stylesheet"</span>
+  <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- 가장 아랫 부분에 --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></table></code></div></div><ul><li><a href="https://getbootstrap.kr/docs/5.2/getting-started/introduction/">Bootstrap 시작하기</a>에서는 integrity와 crossorigin 속성이 존재하는데, 이는 cdn의 보안 취약점을 막아주는 속성입니다.</ul><p>이런식으로 Bootstrap을 적용하였다면, 이제 우리는 간편하게 원하는 컴포넌트를 복사하여 사용 할 수 있습니다.</p><h3 id="bootstrap-사용하기"><span class="mr-2">Bootstrap 사용하기</span><a href="#bootstrap-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><a href="https://getbootstrap.kr/docs/5.2/components/buttons/">Bootstrap 버튼</a>의 예시와 같이 다양한 스타일의 버튼들을 한줄의 코드로 가져다 쓸 수 있으며, 상황에 맞게 커스텀하여 사용이 가능합니다.</p><p>또한, <a href="https://getbootstrap.kr/docs/5.2/layout/breakpoints/">Bootstrap 유틸리티</a>의 예시와 같이 간단하게 html상에서 마진과 패딩을 부여할 수도 있습니다.</p><h3 id="bootstrap-반응형-레이아웃-작성하기"><span class="mr-2">Bootstrap 반응형 레이아웃 작성하기</span><a href="#bootstrap-반응형-레이아웃-작성하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><a href="https://getbootstrap.kr/docs/5.2/layout/breakpoints/">Bootstrap 중단점</a>은 Bootstrap의 강력한 반응형 기능 중 하나입니다.</p><p>앞서 설명했던 반응형 레이아웃을 만들때 중단점을 기준으로 웹, 테블릿, 모바일 환경에서 레이아웃이 다르게 나타나게 설정한것과 같이 Bootstrap에서도 중단점을 이용해 손쉽게 다른 레이아웃이 나타나도록 설정 할 수 있습니다.</p><p>중단점은 다음과 같습니다.</p><div class="language-css highlighter-rouge"><div class="code-header"> <span data-label-text="CSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="err">$</span><span class="nt">grid-breakpoints</span><span class="o">:</span> <span class="o">(</span>
+  <span class="nt">xs</span><span class="o">:</span> <span class="err">0</span><span class="o">,</span>
+  <span class="nt">sm</span><span class="o">:</span> <span class="err">576</span><span class="nt">px</span><span class="o">,</span>
+  <span class="nt">md</span><span class="o">:</span> <span class="err">768</span><span class="nt">px</span><span class="o">,</span>
+  <span class="nt">lg</span><span class="o">:</span> <span class="err">992</span><span class="nt">px</span><span class="o">,</span>
+  <span class="nt">xl</span><span class="o">:</span> <span class="err">1200</span><span class="nt">px</span><span class="o">,</span>
+  <span class="nt">xxl</span><span class="o">:</span> <span class="err">1400</span><span class="nt">px</span>
+<span class="o">);</span>
+</pre></table></code></div></div><h3 id="bootstrap-그리드-레이아웃"><span class="mr-2">Bootstrap 그리드 레이아웃</span><a href="#bootstrap-그리드-레이아웃" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Bootstrap에서는 웹 레이아웃을 구성하는 가장 대표적인 시스템인 12 Column Gird를 사용합니다.</p><p>따라서 우리는 전체 박스를 나눌 때, 12등분을 하여 사용하게 됩니다.</p><p>아래는 간단한 예시입니다.</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- 6개씩 2등분 --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-6"</span><span class="nt">&gt;</span>col-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-6"</span><span class="nt">&gt;</span>col-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- 4개씩 3등분  --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-4"</span><span class="nt">&gt;</span>col-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-4"</span><span class="nt">&gt;</span>col-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-4"</span><span class="nt">&gt;</span>col-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- 6, 3, 3으로 3등분 --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-6"</span><span class="nt">&gt;</span>col-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></table></code></div></div><p>이러한 속성을 중단점과 함께 응용해서 반응형 레이아웃을 구성 할 수 있습니다.</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>col-lg-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>col-lg-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></table></code></div></div><p>위와 같은 레이아웃은 lg 즉, 992px이상에서만 col-6을 적용하라는 의미입니다.<br /> 이렇게 col-6 사이에 반응형 중단점을 넣게 되면 조건문의 역할을 수행합니다.</p><p>따라서, 위의 코드에서는 만약 화면크기가 992px이상이면, 하나의 열에 2등분된 col-lg-6이 존재하고, 그러지 않은 모바일 환경에서는 두개의 열에 각각 하나의 col-lg-6이 존재하게 됩니다.</p><h3 id="좋은-코드란"><span class="mr-2">좋은 코드란?</span><a href="#좋은-코드란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>KISS<br /> Keep It Simple. Stupid!</p><p>최대한 알아보기 쉽고, 수정이 간편하며 관리가 쉬운 코드로 작성하는 것이 좋습니다.</p><p>그 후, 확장성을 생각하시면 좋습니다. 확장성이란, 내가 작성한 코드를 바탕으로 여러가지 방면에서 활용하기 쉽도록 작성하는 것 입니다.</p><h2 id="sass"><span class="mr-2">SASS</span><a href="#sass" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>이번에는 CSS를 좀 더 효율적으로 작성할 수 있는 전처리 언어인 SASS에 대해서 알아볼 것 입니다.<br /> 간단하게 설명하자면, CSS를 조금 더 프로그래밍 언어처럼 사용 할 수 있습니다.</p><h3 id="개발환경-세팅"><span class="mr-2">개발환경 세팅</span><a href="#개발환경-세팅" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>VsCode기준으로 설명을 하겠습니다. 우리가 사용하는 html에서는 오직 Css만 읽어올 수 있기에 당연히 Sass를 읽지 못합니다.<br /> 따라서, Sass를 Css로 변환해 주는 확장프로그램을 사용해 작성한 Sass를 Css로 변환해 사용 가능하게 바꾸도록 하겠습니다.</p><p>왼편에 확장프로그램을 선택하면 Live Sass Compiler라는 확장 프로그램을 검색 할 수 있습니다.<br /> 이때, 3.0.0 버젼은 이전 버젼이므로 아래에 존재하는 5.0.0 이상 버젼인 새로운 Live Sass Compiler를 설치하시면 됩니다.</p><p>이후 .scss파일을 만든 뒤, 오른쪽 아래에 있는 Watch Sass를 이용하면 손쉽게 .Css파일로 변환되는 것을 확인 할 수 있습니다.</p><h3 id="sass-문법---변수"><span class="mr-2">Sass 문법 - 변수</span><a href="#sass-문법---변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>우선 Sass의 대표적인 특징으로 변수를 사용 할 수 있습니다.<br /> 프로젝트를 진행하다보면, Main Theme Color나, Sub Theme Color, Font-Size, Padding 등 프로젝트의 디자인 형식이 존재합니다.</p><p>이러한 디자인 형식은 매번 반복해서 특정 숫자로 표시해야하거나 수정이 필요하면 전체적으로 일일이 수정해주어야 하는데, Sass에서는 변수에 저장하여 편하게 가져다 쓸 수 있습니다. 또한, 해당 변수에 사칙연산과 같은 연산도 가능합니다.</p><p>아래는 간단한 sass 변수들을 이용해 css 설정을 한 코드입니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="nv">$main-color</span><span class="p">:</span> <span class="mh">#9747ff</span><span class="p">;</span>
+<span class="nv">$sub-color</span><span class="p">:</span> <span class="mh">#faab07</span><span class="p">;</span>
+<span class="nv">$default-font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="nv">$large-padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$main-color</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$default-font-size</span> <span class="o">+</span> <span class="m">8px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nv">$sub-color</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="nv">$large-padding</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$default-font-size</span> <span class="o">/</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>물론 Css에서도 calc나, –, var()와 같은 코드들을 이용해 위와 같이 구현이 가능하지만, sass에서는 좀 더 간결하게 사용 가능합니다.</p><h3 id="sass-문법---nesting"><span class="mr-2">Sass 문법 - Nesting</span><a href="#sass-문법---nesting" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>일반적으로 프로그래밍을 진행할 때 아래와 같이 중첩(Nesting)을 이용하여 특정 함수 안에 있는 형태를 표시해줍니다.</p><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">는 3보다 큽니다.</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>이를 Css에서는 &gt;, 공백과 같은 결합자를 이용해 표시하게 됩니다.<br /> 이러한 경우에 sass에서는 아래와 같이 Nesting 문법을 이용하여 좀 더 간결하게 표시 할 수 있습니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre><span class="nc">.header</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">;</span>
+  <span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.container</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// css에서는 아래와 같다.</span>
+
+<span class="nc">.header</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.header</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.header</span> <span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>다만, Nesting을 사용할 때 2개를 초과하여 중첩되게 되면, 복잡할 수 있으므로 최대한 적게 중첩하여 사용하거나, 아래와 같은 방식이 더 나을 수도 있다.</p><p>또한, 가상 선택자와 같은 경우 아래와 같이 사용 할 수 있다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="nt">button</span> <span class="p">{</span>
+  <span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//button :hover을 의미</span>
+
+<span class="nt">button</span> <span class="p">{</span>
+  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//button:hover을 의미</span>
+<span class="c1">//&amp;를 통해 띄어쓰기를 없애줌.</span>
+</pre></table></code></div></div><h3 id="sass-문법---extend"><span class="mr-2">Sass 문법 - @extend</span><a href="#sass-문법---extend" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>버튼을 여러개 만들어 사용하는 경우, 버튼의 크기나 글자 크기등은 같지만 특정 상황에서는 색상이 다른 경우가 있습니다. 기존 Css에서는 btn클래스와 btn-red와 같은 클래스를 2개 부여하여 여러가지 다양성을 주었지만, Sass에서는 하나의 클래스로 이를 사용 할 수 있습니다.</p><p>바로 @extend를 이용하는 건데, 이는 해당 클래스의 내용을 이어받는다는 뜻입니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="nc">.btn</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.btn-red</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.btn</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-green</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.btn</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>이러한 경우 btn-red는 btn btn-red 대신, btn-red 클래스 하나만 적용해도 같은 결과를 나타내게 됩니다.</p><p>만약, btn 클래스를 사용할 일이 없다면, 아래와 같이 임시 클래스 기호인 %를 이용해 css의 용량을 줄일수도 있습니다.<br /> %인 임시클래스의 경우 css로 컴파일을 진행할 때 클래스로 컴파일을 하지 않아 css에서 나타나지 않습니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="nv">%btn</span> <span class="p">{</span>
+  <span class="c1">// 위와 동일</span>
+<span class="p">}</span>
+<span class="nc">.btn-red</span> <span class="p">{</span>
+  <span class="c1">// 위와 동일</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-green</span> <span class="p">{</span>
+  <span class="c1">// 위와 동일</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h3 id="sass-문법---mixin"><span class="mr-2">Sass 문법 - @mixin</span><a href="#sass-문법---mixin" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>@mixin은 함수와 같은 개념입니다.<br /> 좀 전에 보았던 @extends와 같이 중복된 Css를 재사용이 가능하지만, 특정 변수들을 가지고 가변적으로 제작 할 수 있습니다.</p><p>아래 코드를 보면서 설명드리겠습니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="k">@mixin</span> <span class="nf">btn-function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.btn-red</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">btn-function</span><span class="p">();</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-green</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">btn-function</span><span class="p">();</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>해당 코드는 위의 @extend와 같이, btn-function을 가져와 해당 btn-red와 btn-green에 적용한 sass 입니다.<br /> 다만 @mixin과 같은 경우에는 아래와 같이 @extend보다 한가지 더 기능을 제공합니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="k">@mixin</span> <span class="nf">btn-function</span><span class="p">(</span><span class="nv">$background-color</span><span class="o">,</span> <span class="nv">$font-color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nv">$background-color</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$font-color</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.btn-red</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">btn-function</span><span class="p">(</span><span class="no">red</span><span class="o">,</span> <span class="no">white</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-green</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">btn-function</span><span class="p">(</span><span class="no">green</span><span class="o">,</span> <span class="no">white</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>“$변수명”와 같이 작성하여 @include에서 특정 값들을 가져와 그 값을 기반으로 Css를 작성할 수 있습니다. 일반적으로 “값”들을 가져오지만 “속성” 또한 아래와 같이 가져올 수 있습니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="k">@mixin</span> <span class="nf">test</span><span class="p">(</span><span class="nv">$attr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="si">#{</span> <span class="nv">$attr</span> <span class="si">}</span><span class="nd">:</span> <span class="nt">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">test</span><span class="p">(</span><span class="n">width</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//container의 width:10px; Css가 적용되게 됨.</span>
+</pre></table></code></div></div><h3 id="sass-문법---use"><span class="mr-2">Sass 문법 - @use</span><a href="#sass-문법---use" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>import를 통해서 다른 파일을 가져와 해당 파일에서 사용하는 것과 같이 Sass에서는 @use를 이용해 특정 파일을 가져와 사용 할 수 있습니다.<br /> 이때, 특정 파일의 변수나, 함수같은 경우 “파일이름.변수”와 같이 사용해야하고, 기본 css 선택자를 이용한 css는 자동으로 적용 됩니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="k">@use</span> <span class="s2">"파일명.scss"</span><span class="p">;</span>
+
+<span class="err">파일명</span><span class="nc">.</span><span class="err">$변수명</span><span class="p">;</span>  <span class="cm">/* 다른 파일의 변수쓰는법 */</span>
+<span class="k">@include</span> <span class="err">파일명</span><span class="nc">.mixin</span><span class="err">이름</span><span class="o">()</span><span class="p">;</span>  <span class="cm">/* 다른 파일의 mixin쓰는법 */</span>
+</pre></table></code></div></div><p>아래는 test.scss에서 파일을 불러온 예제입니다.</p><div class="language-scss highlighter-rouge"><div class="code-header"> <span data-label-text="SCSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="c1">//test.scss</span>
+<span class="nv">$main-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+
+<span class="k">@mixin</span> <span class="nf">font</span><span class="p">(</span><span class="nv">$font-size</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$font-size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//main.scss</span>
+<span class="k">@use</span> <span class="s2">"test.scss"</span><span class="p">;</span>
+
+<span class="nt">button</span> <span class="p">{</span>
+  <span class="k">@import</span> <span class="n">test</span><span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="m">10px</span><span class="p">);</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="n">test</span><span class="o">.</span><span class="nv">$main-color</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>아래는 위의 Scss가 컴파일 과정을 거쳐서 css에서 적용된 내용입니다.</p><p>확인하기 전에 먼저 한번 어떤식으로 적용이 될지 생각하고 확인해보시기 바랍니다.</p><div class="language-css highlighter-rouge"><div class="code-header"> <span data-label-text="CSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="c">/* 실제 css에서 적용된 내용 */</span>
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">button</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#333</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>이렇게 @use를 이용해 가져오는 파일의 경우 개별적으로는 사용하지 않는 경우도 존재합니다.<br /> 이럴때 파일 이름 앞에 _를 이용해 작명을 하게 될 경우 컴파일하지 않아 불필요한 css파일이 생성되는 일을 막을 수 있습니다.</p><p>예를들어, main-css.scss라는 파일을 오직 @use로만 사용한다면, _main-css.scss라고 작명할 시 자동으로 컴파일 되지 않습니다.</p><h2 id="grid-layout"><span class="mr-2">Grid Layout</span><a href="#grid-layout" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Grid 레이아웃은 격자를 만드는 레이아웃입니다.<br /> 즉, 모눈종이를 만든다고 생각하시면 편합니다.</p><p>4개의 div를 row 2행, column 2열으로 구성해보았습니다.</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></table></code></div></div><div class="language-css highlighter-rouge"><div class="code-header"> <span data-label-text="CSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nc">.grid-container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">100px</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="py">grid-template-rows</span><span class="p">:</span> <span class="m">100px</span> <span class="m">100px</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="py">grid-gap</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.grid-container</span> <span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>이후 구성된 2x2 레이아웃에서 특정 박스를 늘릴 수 있습니다.<br /> 방법은 2가지가 존재하는데 첫째는 자식 요소에 속성을 주는 방법이 있고, 둘째로 부모 요소에서 정의하는 방법이 있습니다.</p><p>첫번째 방법은 자식 요소에 class를 부여하고 grid-column, grid-row속성을 적용하면 됩니다.</p><div class="language-css highlighter-rouge"><div class="code-header"> <span data-label-text="CSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nc">.grid-div1</span> <span class="p">{</span>
+  <span class="c">/* 1번째 세로선부터 3번째 세로선까지 */</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="m">1</span> <span class="p">/</span> <span class="m">3</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.grid-div2</span> <span class="p">{</span>
+  <span class="c">/* 2번째 가로선부터 4번째 가로선까지 */</span>
+  <span class="nl">grid-row</span><span class="p">:</span> <span class="m">2</span> <span class="p">/</span> <span class="m">4</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>두번째 방법은 자식요소에 area 속성을 부여한뒤, 부모 요소에서 template-areas에서 자식 요소들을 배치 할 수 있다.</p><div class="language-css highlighter-rouge"><div class="code-header"> <span data-label-text="CSS"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="nc">.grid-container</span> <span class="p">{</span>
+  <span class="py">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"div1 div1"</span>
+    <span class="s1">"div2 ."</span>
+    <span class="s1">"div2 ."</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.grid-div1</span> <span class="p">{</span>
+  <span class="py">grid-area</span><span class="p">:</span> <span class="n">div1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.grid-div2</span> <span class="p">{</span>
+  <span class="py">grid-area</span><span class="p">:</span> <span class="n">div2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h2 id="position-sticky"><span class="mr-2">Position: sticky</span><a href="#position-sticky" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Position sticky는 가변적인 position flex입니다.</p><p>좀 더 쉽게 설명하자면, 해당 요소가 화면에 나오면 fixed와 마찬가지로 화면에 고정시키고, 해당 요소의 부모요소가 화면에서 벗어나게 되면, 다시 원래의 position으로 넣어주게 됩니다.</p><p>이를 이용해서 특정 요소가 화면에 나왔을 때만 고정시키고 나머지 요소는 스크롤이 가능하게 처리 할 수 있습니다.</p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/web/'>Web</a>, <a href='/categories/html-css/'>HTML/CSS</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/sass/" class="post-tag no-text-decoration" >Sass</a> <a href="/tags/bootstrap/" class="post-tag no-text-decoration" >BootStrap</a> <a href="/tags/frontend/" class="post-tag no-text-decoration" >FrontEnd</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=HTML%2FCSS+%EA%B3%A0%EA%B8%89+%EB%AA%A8%EB%93%88+-+Shinak%27s+Dev+Blog&url=https%3A%2F%2Fhin6150.github.io%2Fposts%2FHTML-CSS-04%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=HTML%2FCSS+%EA%B3%A0%EA%B8%89+%EB%AA%A8%EB%93%88+-+Shinak%27s+Dev+Blog&u=https%3A%2F%2Fhin6150.github.io%2Fposts%2FHTML-CSS-04%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fhin6150.github.io%2Fposts%2FHTML-CSS-04%2F&text=HTML%2FCSS+%EA%B3%A0%EA%B8%89+%EB%AA%A8%EB%93%88+-+Shinak%27s+Dev+Blog" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/2023-05-15-React-01/"></a><li><a href="/posts/Javascript-02/">JavaScript 입문 2</a><li><a href="/posts/Javascript-01/">JavaScript 입문 1</a><li><a href="/posts/HTML-CSS-02/">기본 CSS속성 1</a><li><a href="/posts/HTML-CSS-03/">기본 CSS속성 2</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/howto/">HowTo</a> <a class="post-tag" href="/tags/frontend/">FrontEnd</a> <a class="post-tag" href="/tags/css/">CSS</a> <a class="post-tag" href="/tags/github/">Github</a> <a class="post-tag" href="/tags/html/">HTML</a> <a class="post-tag" href="/tags/javascript/">Javascript</a> <a class="post-tag" href="/tags/jekyll/">Jekyll</a> <a class="post-tag" href="/tags/bootstrap/">BootStrap</a> <a class="post-tag" href="/tags/chripy/">Chripy</a> <a class="post-tag" href="/tags/front/">Front</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/HTML-CSS-01/"><div class="card-body"> <em class="small" data-ts="1680645934" data-df="ll" > Apr 5, 2023 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>기초 HTLM,CSS 문법.</h3><div class="text-muted small"><p> HTML이란? 하이퍼 텍스트 마크업 언어(Hyper Text Markup Language, HTML) 짧게 설명하자면, &amp;lt;태그&amp;gt; 형식을 이용하여 제목, 단락, 목록 등 구조적 문서를 만들 수 있는 방법을 제공하는 마크업 언어입니다. 아래는 HTML의 기본적인 템플릿 입니다. &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt;...</p></div></div></a></div><div class="card"> <a href="/posts/HTML-CSS-02/"><div class="card-body"> <em class="small" data-ts="1680740254" data-df="ll" > Apr 6, 2023 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>기본 CSS속성 1</h3><div class="text-muted small"><p> 다양한 레이아웃 속성들 웹 페이지 레이아웃을 만들 때 가장 먼저 해야 하는 것은 세분화 입니다. 하나의 페이지를 여러 구역으로 나누고, 해당 구역을 다시 박스 형태로 나누다 보면 어떤 식으로 코드를 작성해야 되는지 감이 잡힐 것이라고 생각 됩니다. float 속성 &amp;lt;div class=&quot;container&quot;&amp;gt; &amp;lt;div clas...</p></div></div></a></div><div class="card"> <a href="/posts/HTML-CSS-03/"><div class="card-body"> <em class="small" data-ts="1681344000" data-df="ll" > Apr 13, 2023 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>기본 CSS속성 2</h3><div class="text-muted small"><p> Flex 속성 기본적으로 div 박스는 아래로 정렬되는 속성을 가지고 있습니다. 즉, 위에서 부터 아래로 한칸씩 쌓이는 것이죠. 그렇지만, flexbox를 이용하면 이를 손쉽게 변경 할 수 있습니다. &amp;lt;div class=&quot;flex-container&quot;&amp;gt; &amp;lt;div class=&quot;box&quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/HTML-CSS-03/" class="btn btn-outline-primary" prompt="Older"><p>기본 CSS속성 2</p></a> <a href="/posts/Javascript-01/" class="btn btn-outline-primary" prompt="Newer"><p>JavaScript 입문 1</p></a></div><script type="text/javascript"> $(function () { const origin = "https://giscus.app"; const iframe = "iframe.giscus-frame"; const lightTheme = "light"; const darkTheme = "dark_dimmed"; let initTheme = lightTheme; if ($("html[data-mode=dark]").length > 0 || ($("html[data-mode]").length == 0 && window.matchMedia("(prefers-color-scheme: dark)").matches)) { initTheme = darkTheme; } let giscusAttributes = { "src": "https://giscus.app/client.js", "data-repo": "hin6150/hin6150.github.io", "data-repo-id": "R_kgDOHwTEzQ", "data-category": "Announcements", "data-category-id": "DIC_kwDOHwTEzc4CQklP", "data-mapping": "pathname", "data-reactions-enabled": "1", "data-emit-metadata": "0", "data-theme": initTheme, "data-input-position": "bottom", "data-lang": "en", "crossorigin": "anonymous", "async": "" }; let giscusScript = document.createElement("script"); Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value)); document.getElementById("tail-wrapper").appendChild(giscusScript); addEventListener("message", (event) => { if (event.source === window && event.data && event.data.direction === ModeToggle.ID) { /* global theme mode changed */ const mode = event.data.message; const theme = (mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme); const message = { setConfig: { theme: theme } }; const giscus = document.querySelector(iframe).contentWindow; giscus.postMessage({ giscus: message }, origin); } }); }); </script></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/hin6150">Shinak</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/howto/">HowTo</a> <a class="post-tag" href="/tags/frontend/">FrontEnd</a> <a class="post-tag" href="/tags/css/">CSS</a> <a class="post-tag" href="/tags/github/">Github</a> <a class="post-tag" href="/tags/html/">HTML</a> <a class="post-tag" href="/tags/javascript/">Javascript</a> <a class="post-tag" href="/tags/jekyll/">Jekyll</a> <a class="post-tag" href="/tags/bootstrap/">BootStrap</a> <a class="post-tag" href="/tags/chripy/">Chripy</a> <a class="post-tag" href="/tags/front/">Front</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-6WHM0Y0RHX"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-6WHM0Y0RHX'); }); </script>
